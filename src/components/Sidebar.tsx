@@ -1,5 +1,5 @@
-// src/components/Sidebar.tsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   FaTachometerAlt, 
   FaClipboardList, 
@@ -9,38 +9,34 @@ import {
   FaChartBar, 
   FaCog 
 } from 'react-icons/fa';
-import { Link, useLocation } from 'react-router-dom'; // Import useLocation
 import './Sidebar.css';
 
 type SidebarItemProps = {
   icon: React.ReactNode;
   text: string;
-  to: string; // Add to prop for the route
   active?: boolean;
+  onClick?: () => void;
 };
 
-const SidebarItem: React.FC<SidebarItemProps> = ({ icon, text, to, active = false }) => {
+const SidebarItem: React.FC<SidebarItemProps> = ({ icon, text, active = false, onClick }) => {
   return (
-    <Link to={to} className={`sidebar-item ${active ? 'active' : ''}`}>
+    <div className={`sidebar-item ${active ? 'active' : ''}`} onClick={onClick}>
       <span className="sidebar-icon">{icon}</span>
       <span className="sidebar-text">{text}</span>
-    </Link>
+    </div>
   );
 };
 
 const Sidebar: React.FC = () => {
-  const location = useLocation(); // Get the current route
+  const navigate = useNavigate();
 
-  // Define sidebar items with their routes
-  const sidebarItems = [
-    { text: 'Dashboard', to: '/dashboard', icon: <FaTachometerAlt /> },
-    { text: 'Requirements', to: '/generate-brd', icon: <FaClipboardList /> },
-    { text: 'Test Cases', to: '#', icon: <FaCheckSquare /> },
-    { text: 'UI Comparison', to: '#', icon: <FaColumns /> },
-    { text: 'Compliance', to: '#', icon: <FaShieldAlt /> },
-    { text: 'Analytics', to: '#', icon: <FaChartBar /> },
-    { text: 'Settings', to: '#', icon: <FaCog /> },
-  ];
+  const TachometerIcon = FaTachometerAlt as unknown as React.FC;
+  const ClipboardIcon = FaClipboardList as unknown as React.FC;
+  const CheckSquareIcon = FaCheckSquare as unknown as React.FC;
+  const ColumnsIcon = FaColumns as unknown as React.FC;
+  const ShieldAltIcon = FaShieldAlt as unknown as React.FC;
+  const ChartBarIcon = FaChartBar as unknown as React.FC;
+  const CogIcon = FaCog as unknown as React.FC;
 
   return (
     <aside className="sidebar">
@@ -48,15 +44,13 @@ const Sidebar: React.FC = () => {
         <img src="/hdfclogo.png" alt="HDFC VisionX T" />
       </div>
       <nav className="sidebar-menu">
-        {sidebarItems.map((item) => (
-          <SidebarItem
-            key={item.text}
-            icon={item.icon}
-            text={item.text}
-            to={item.to}
-            active={location.pathname === item.to} // Highlight the active route
-          />
-        ))}
+        <SidebarItem icon={<TachometerIcon />} text="Dashboard" active />
+        <SidebarItem icon={<ClipboardIcon />} text="Requirements" onClick={() => navigate('/generate-brd')} />
+        <SidebarItem icon={<CheckSquareIcon />} text="Test Cases" />
+        <SidebarItem icon={<ColumnsIcon />} text="UI Comparison" />
+        <SidebarItem icon={<ShieldAltIcon />} text="Compliance" />
+        <SidebarItem icon={<ChartBarIcon />} text="Analytics" />
+        <SidebarItem icon={<CogIcon />} text="Settings" />
       </nav>
       <div className="sidebar-footer">
         <div className="profile-pic-placeholder">JS</div>

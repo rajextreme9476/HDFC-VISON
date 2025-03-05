@@ -39,8 +39,7 @@ app.post('/api/generate-brd', async (req, res) => {
         const data = await response.json();
         res.json({ brd: data });
     } catch (error) {
-        console.error("
-            Server error:", error);
+        console.error("Server error:", error);
         res.status(500).json({ error: "Internal Server Error" });
     }
 });

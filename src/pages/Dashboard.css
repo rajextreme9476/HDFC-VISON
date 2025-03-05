@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
-body {
-  font-family: 'Lato', sans-serif;
-}
+/* src/pages/Dashboard.css */
 .dashboard {
-    flex: 1;
     padding: 20px;
     background: #f5f6fa;
     min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    display: block; /* Ensure the container is visible */
   }
   
   .dashboard-header {
@@ -15,6 +14,16 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+  }
+  
+  .header-logo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .header-logo {
+    width: 120px;
   }
   
   .dashboard-header h1 {
@@ -30,29 +39,33 @@ body {
   }
   
   .search-bar-container {
-    position: relative;
     display: flex;
     align-items: center;
-  }
-  
-  .search-bar {
-    padding: 8px 8px 8px 35px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    outline: none;
-    font-size: 14px;
     background: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   .search-icon {
-    position: absolute;
-    left: 10px;
-    color: #666;
     font-size: 18px;
+    color: #666;
+    margin-right: 8px;
+  }
+  
+  .search-bar {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .search-bar::placeholder {
+    color: #999;
   }
   
   .header-icon {
-    font-size: 20px;
+    font-size: 24px;
     color: #666;
     cursor: pointer;
   }
@@ -65,34 +78,36 @@ body {
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
+    width: 100%;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
   }
   
   .stat-card {
+    flex: 1;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1;
     text-align: center;
+    min-width: 200px; /* Ensure cards are visible */
   }
   
   .stat-card h3 {
     font-size: 16px;
     color: #666;
     margin-bottom: 10px;
-    font-weight: 500;
   }
   
   .stat-card p {
     font-size: 24px;
-    font-weight: bold;
     color: #333;
-    margin: 0;
+    font-weight: 600;
+    margin-bottom: 5px;
   }
   
   .change {
-    font-size: 12px;
-    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 500;
   }
   
   .change.positive {
@@ -103,39 +118,26 @@ body {
     color: #e74c3c;
   }
   
-
-/* src/styles/Dashboard.css */
-.dashboard-actions {
+  .dashboard-actions {
     display: flex;
-    justify-content: center; /* Center the cards */
-    gap: 10px; /* Space between cards */
+    justify-content: center;
+    gap: 20px;
     margin-bottom: 20px;
-    padding: 0 10px; /* Padding to avoid touching screen edges */
+    padding: 0 10px;
     width: 100%;
     box-sizing: border-box;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
   }
   
   @media (max-width: 768px) {
+    .dashboard-stats {
+      flex-direction: column;
+    }
+  
     .dashboard-actions {
       flex-direction: column;
-      justify-content: center; /* Center the cards */
-      gap: 15px; /* Smaller gap on mobile */
+      align-items: center;
+      gap: 15px;
       padding: 0;
-    }
-  
-  
-
-    .dashboard-header {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .header-actions {
-      width: 100%;
-      justify-content: space-between;
-    }
-  
-    .search-bar {
-      width: 100%;
     }
   }

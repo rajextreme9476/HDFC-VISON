@@ -1,3 +1,4 @@
+// src/pages/Dashboard.tsx
 import React from 'react';
 import { FaPhone, FaFileAlt, FaPlay, FaSearch, FaBell, FaCog } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +14,7 @@ const Dashboard: React.FC = () => {
     <div className="dashboard">
       <header className="dashboard-header">
         <div className="header-logo-title">
-          <img src="/hdfc-logo.png" alt="HDFC Vision" className="header-logo" />
+          <img src="/hdfclogo.png" alt="HDFC Vision" className="header-logo" />
           <h1>HDFC Vision</h1>
         </div>
         <div className="header-actions">

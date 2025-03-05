@@ -61,7 +61,7 @@ const GenerateBRD: React.FC = () => {
         }),
       }); */
 
-/*   
+  
     const response = await fetch(
         `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateText?key=${GEMINI_API_KEY}`,
         {
@@ -74,13 +74,13 @@ const GenerateBRD: React.FC = () => {
             contents: [{ parts: [{ text: prompt }] }],
           }),
         }
-      ); */
+      ); 
       
-      const response = await fetch('http://localhost:5000/api/generate-brd', {
+/*       const response = await fetch('http://localhost:5000/api/generate-brd', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt }),
-      });
+      }); */
       
   
       const data = await response.json();

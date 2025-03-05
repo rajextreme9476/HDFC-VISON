@@ -1,3 +1,4 @@
+// src/components/Sidebar.tsx
 import React from 'react';
 import { 
   FaTachometerAlt, 
@@ -8,31 +9,38 @@ import {
   FaChartBar, 
   FaCog 
 } from 'react-icons/fa';
+import { Link, useLocation } from 'react-router-dom'; // Import useLocation
 import './Sidebar.css';
 
 type SidebarItemProps = {
   icon: React.ReactNode;
   text: string;
+  to: string; // Add to prop for the route
   active?: boolean;
 };
 
-const SidebarItem: React.FC<SidebarItemProps> = ({ icon, text, active = false }) => {
+const SidebarItem: React.FC<SidebarItemProps> = ({ icon, text, to, active = false }) => {
   return (
-    <div className={`sidebar-item ${active ? 'active' : ''}`}>
+    <Link to={to} className={`sidebar-item ${active ? 'active' : ''}`}>
       <span className="sidebar-icon">{icon}</span>
       <span className="sidebar-text">{text}</span>
-    </div>
+    </Link>
   );
 };
 
 const Sidebar: React.FC = () => {
-  const TachometerIcon = FaTachometerAlt as unknown as React.FC;
-  const ClipboardIcon = FaClipboardList as unknown as React.FC;
-  const CheckSquareIcon = FaCheckSquare as unknown as React.FC;
-  const ColumnsIcon = FaColumns as unknown as React.FC;
-  const ShieldAltIcon = FaShieldAlt as unknown as React.FC;
-  const ChartBarIcon = FaChartBar as unknown as React.FC;
-  const CogIcon = FaCog as unknown as React.FC;
+  const location = useLocation(); // Get the current route
+
+  // Define sidebar items with their routes
+  const sidebarItems = [
+    { text: 'Dashboard', to: '/dashboard', icon: <FaTachometerAlt /> },
+    { text: 'Requirements', to: '/generate-brd', icon: <FaClipboardList /> },
+    { text: 'Test Cases', to: '#', icon: <FaCheckSquare /> },
+    { text: 'UI Comparison', to: '#', icon: <FaColumns /> },
+    { text: 'Compliance', to: '#', icon: <FaShieldAlt /> },
+    { text: 'Analytics', to: '#', icon: <FaChartBar /> },
+    { text: 'Settings', to: '#', icon: <FaCog /> },
+  ];
 
   return (
     <aside className="sidebar">
@@ -40,13 +48,15 @@ const Sidebar: React.FC = () => {
         <img src="/hdfclogo.png" alt="HDFC VisionX T" />
       </div>
       <nav className="sidebar-menu">
-        <SidebarItem icon={<TachometerIcon />} text="Dashboard" active />
-        <SidebarItem icon={<ClipboardIcon />} text="Requirements" />
-        <SidebarItem icon={<CheckSquareIcon />} text="Test Cases" />
-        <SidebarItem icon={<ColumnsIcon />} text="UI Comparison" />
-        <SidebarItem icon={<ShieldAltIcon />} text="Compliance" />
-        <SidebarItem icon={<ChartBarIcon />} text="Analytics" />
-        <SidebarItem icon={<CogIcon />} text="Settings" />
+        {sidebarItems.map((item) => (
+          <SidebarItem
+            key={item.text}
+            icon={item.icon}
+            text={item.text}
+            to={item.to}
+            active={location.pathname === item.to} // Highlight the active route
+          />
+        ))}
       </nav>
       <div className="sidebar-footer">
         <div className="profile-pic-placeholder">JS</div>

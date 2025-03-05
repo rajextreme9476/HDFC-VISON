@@ -1,0 +1,46 @@
+/* src/styles/DashboardCard.css */
+.dashboard-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-flex; /* Wrap content */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  margin: 0 10px; /* Spacing between cards */
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card-icon {
+  font-size: 24px;
+  color: #6c5ce7;
+  margin-bottom: 10px;
+}
+
+.dashboard-card-content {
+  display: flex;
+  flex-direction: row; /* Title and subtitle on the same line */
+  align-items: center; /* Vertically center the title and subtitle */
+  gap: 5px; /* Space between title and subtitle */
+  flex-wrap: wrap; /* Allow wrapping if content is too long */
+}
+
+.dashboard-card-title {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.dashboard-card-subtitle {
+  font-size: 12px;
+  color: #666;
+}

@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import mammoth from 'mammoth'; // For reading .doc files
 import './GenerateBRD.css';
+import { GoogleGenerativeAI } from "@google/generative-ai"; // ✅ Correct import
 
 const GenerateBRD: React.FC = () => {
   const navigate = useNavigate();
@@ -12,6 +13,9 @@ const GenerateBRD: React.FC = () => {
   const [generatedBRD, setGeneratedBRD] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const genAI = new GoogleGenerativeAI("AIzaSyC35nTY2y-ospXRdM_9bywBreQiIO1jF7w");
+  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+  const promptX = "Explain how AI works";
 
   // Replace with your Gemini AI API key
   const GEMINI_API_KEY = 'AIzaSyC35nTY2y-ospXRdM_9bywBreQiIO1jF7w';
@@ -61,8 +65,14 @@ const GenerateBRD: React.FC = () => {
         }),
       }); */
 
+      
+      const result = await model.generateContent(prompt);
+      console.log(result.response.text());
+
+
+
   
-    const response = await fetch(
+   /*  const response = await fetch(
         `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateText?key=${GEMINI_API_KEY}`,
         {
           method: 'POST',
@@ -75,7 +85,7 @@ const GenerateBRD: React.FC = () => {
           }),
         }
       ); 
-      
+       */
 /*       const response = await fetch('http://localhost:5000/api/generate-brd', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -83,8 +93,9 @@ const GenerateBRD: React.FC = () => {
       }); */
       
   
-      const data = await response.json();
-      const brdText = data.generated_text || 'Failed to generate BRD content.';
+/*       const data = await result.response.json();
+ */      
+      const brdText = result.response.text() || 'Failed to generate BRD content.';
       setGeneratedBRD(brdText);
 
       // Automatically download the BRD as a .doc file

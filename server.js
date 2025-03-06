@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const fetch = require('node-fetch');
 
 const app = express();
 const PORT = 5000;
@@ -10,7 +9,6 @@ app.use(express.json());
 app.use(cors());
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`;
 
 app.post('/api/generate-brd', async (req, res) => {
     try {
@@ -19,6 +17,11 @@ app.post('/api/generate-brd', async (req, res) => {
         if (!prompt) {
             return res.status(400).json({ error: "Prompt is required" });
         }
+
+        const fetchModule = await import('node-fetch');
+        const fetch = fetchModule.default;
+
+        const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`;
 
         const response = await fetch(GEMINI_API_URL, {
             method: 'POST',

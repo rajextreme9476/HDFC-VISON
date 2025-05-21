@@ -1,0 +1,227 @@
+/* src/styles/GenerateBRD.css */
+.generate-brd {
+    padding: 20px;
+    background: #f5f6fa;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-header h2 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .profile-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #004C8F;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .instructions {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px dashed #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    resize: vertical;
+    background: white;
+  }
+  
+  .form-group textarea::placeholder {
+    color: #999;
+  }
+  
+  .upload-box {
+    border: 1px dashed #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    background: white;
+  }
+  
+  .upload-box span {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .supported-formats {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .browse-button {
+    padding: 8px 16px;
+    background: #004C8F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .browse-button:hover {
+    background: #004C8F;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .back-button, .generate-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .back-button {
+    background: #f0f0f0;
+    color: #333;
+  }
+  
+  .back-button:hover {
+    background: #e0e0e0;
+  }
+  
+  .generate-button {
+    background: #004C8F;
+    color: white;
+  }
+  
+  .generate-button:hover {
+    background: #5a4cd6;
+  }
+  
+  .generated-brd {
+    margin-top: 40px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .brd-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-button, .download-button, .back-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .edit-button {
+    background: #ddd;
+    color: #333;
+  }
+  
+  .edit-button:hover {
+    background: #ccc;
+  }
+  
+  .download-button {
+    background: #ddd;
+    color: #333;
+  }
+  
+  .download-button:hover {
+    background: #ccc;
+  }
+  
+  .brd-content {
+    margin-top: 20px;
+  }
+  
+  .brd-content h3 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .brd-content p, .brd-content ul, .brd-content ol {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .scope-columns {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .scope-columns div {
+    flex: 1;
+  }
+  
+  .scope-columns h4 {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .stakeholders-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .stakeholders-table th, .stakeholders-table td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .stakeholders-table th {
+    color: #666;
+    font-weight: 500;
+  }
+  
+  .stakeholders-table td {
+    color: #333;
+  }

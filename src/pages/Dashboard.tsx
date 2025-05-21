@@ -66,6 +66,8 @@ const Dashboard: React.FC = () => {
           title="Generate Testcases"
           icon={(FaFileAlt as any)({})}
           subtitle="Create from BRD"
+          onClick={() => navigate('/generate-test-cases')}
+
         />
         <DashboardCard
           title="Execute Tests"

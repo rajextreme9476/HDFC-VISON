@@ -65,7 +65,7 @@ const GenerateBRD: React.FC = () => {
         }),
       }); */
 
-      
+
       const result = await model.generateContent(prompt);
       console.log(result.response.text());
 
@@ -161,8 +161,8 @@ const GenerateBRD: React.FC = () => {
       <section className="input-details">
         <div className="section-header">
           <div className="header-logo-title">
-            <img src="/hdfc-logo.png" alt="HDFC Vision" className="header-logo" />
-            <h2>Generate BRD - Input Details</h2>
+            <img src="/hdfc-logo.png" alt="HDFC Vision" className="header-logo" hidden />
+            <h2>Generate BRD</h2>
           </div>
           <button className="profile-button">
             <span className="profile-initials">JS</span>

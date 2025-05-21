@@ -11,9 +11,9 @@ body {
 
 .main-content {
   flex: 1;
-  padding: 20px;
+  padding: 2px;
   box-sizing: border-box;
-  background: #f5f6fa; /* Ensure background matches Dashboard */
+  background: #FFFFFF; /* Ensure background matches Dashboard */
 }
 
 @media (max-width: 768px) {

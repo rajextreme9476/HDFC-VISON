@@ -40,22 +40,20 @@ const Sidebar: React.FC = () => {
 
   return (
     <aside className="sidebar">
-      <div className="sidebar-logo">
-        <img src="/hdfclogo.png" alt="HDFC VisionX T" />
-      </div>
+    
       <nav className="sidebar-menu">
         <SidebarItem icon={<TachometerIcon />} text="Dashboard" active />
-        <SidebarItem icon={<ClipboardIcon />} text="Requirements" onClick={() => navigate('/generate-brd')} />
-        <SidebarItem icon={<CheckSquareIcon />} text="Test Cases" />
+        <SidebarItem icon={<ClipboardIcon />} text="Build project requirements" onClick={() => navigate('/generate-brd')} />
+        <SidebarItem icon={<ShieldAltIcon />} text="Create MOM" onClick={() => navigate('/generate-mom')} />
+        <SidebarItem icon={<CheckSquareIcon />} text="Generate Testcases" onClick={() => navigate('/generate-test-cases')} />
         <SidebarItem icon={<ColumnsIcon />} text="UI Comparison" />
-        <SidebarItem icon={<ShieldAltIcon />} text="Compliance" />
         <SidebarItem icon={<ChartBarIcon />} text="Analytics" />
         <SidebarItem icon={<CogIcon />} text="Settings" />
       </nav>
       <div className="sidebar-footer">
         <div className="profile-pic-placeholder">JS</div>
         <div className="profile-info">
-          <span className="profile-name">John Smith</span>
+          <span className="profile-name">Raviraj Desai</span>
           <span className="role">Project Manager</span>
         </div>
       </div>

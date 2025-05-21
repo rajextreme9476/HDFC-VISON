@@ -40,14 +40,14 @@
 }
 
 .sidebar-item.active {
-  background: #6c5ce7;
+  background: #004C8F;
   color: white;
 }
 
 .sidebar-icon {
   margin-right: 10px;
   font-size: 18px;
-  color: #666;
+  color: #004C8F;
 }
 
 .sidebar-item.active .sidebar-icon {
@@ -69,7 +69,7 @@
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
-  background: #6c5ce7;
+  background: #004C8F;
   color: white;
   display: flex;
   align-items: center;
@@ -84,12 +84,12 @@
 
 .profile-name {
   font-size: 16px;
-  color: #333;
+  color: #004C8F;
 }
 
 .role {
   font-size: 12px;
-  color: #666;
+  color: #004C8F;
 }
 
 @media (max-width: 768px) {

@@ -23,7 +23,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #6c5ce7;
+    background: #004C8F;
     color: white;
     display: flex;
     align-items: center;
@@ -88,7 +88,7 @@
   
   .browse-button {
     padding: 8px 16px;
-    background: #6c5ce7;
+    background: #004C8F;
     color: white;
     border: none;
     border-radius: 5px;
@@ -97,7 +97,7 @@
   }
   
   .browse-button:hover {
-    background: #5a4cd6;
+    background: #004C8F;
   }
   
   .form-actions {
@@ -124,12 +124,12 @@
   }
   
   .generate-button {
-    background: #6c5ce7;
+    background: #004C8F;
     color: white;
   }
   
   .generate-button:hover {
-    background: #5a4cd6;
+    background: #004C8F;
   }
   
   .generated-brd {

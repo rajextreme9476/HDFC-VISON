@@ -81,162 +81,142 @@ const GenerateBRD: React.FC = () => {
       }
 
       prompt += `Generate the BRD in the exact format of the following template, including all sections and tables as specified. Use plain text with clear section headings (e.g., ## Document Control, ## Review, etc.). For headings, indicate they should be in blue (RGB: 0, 0, 255), and content should be in black. Where data is not available, use "NA" as specified. Do not include a title like "Business Requirements Document" in the content. The template is as follows:\n\n`;
-      prompt += `
-## Document Control
-**Authorization**
-| Field | Value |
-|-------|-------|
-| TEMPLATE NAME | Feature Story Template Mobile Banking |
-| TEMPLATE VERSION | 1.1 |
-| EFFECTIVE DATE | 26th June 2025 |
-| TEMPLATE OWNER | Enterprise Factory Bengaluru |
-| TEMPLATE APPROVER | Process Owner |
-| DOCUMENT OWNER | Mansi Vora |
-| DOCUMENT CLASSIFICATION | Restricted |
-| DOCUMENT VERSION NO. | 1.1 |
+      prompt += `Business Requirements Document (BRD)
+Project Title: [Insert Project Name]
+ Date: [Insert Date]
+ Version: [v1.0]
+ Prepared by: [Your Name / Team]
 
-## Review
-| TEMPLATE VERSION | DATE | AUTHOR | DESCRIPTION |
-|------------------|------|--------|-------------|
-| 1.0 | 11th June 2025 | Mansi Vora | Released version of the Feature story |
-| 1.1 | 26th June 2025 | Mansi Vora | Updated the remarks basis discussion with other UH |
+1. Introduction
+1.1 Background
+Provide a brief background of the problem or opportunity that led to this project.
+1.2 Business Need
+Explain the specific business need or gap that the project intends to address.
 
-## Epic / Transaction Title
-- EPIC No: [NA]
-- EPIC Name: [NA]
-- Transaction Name: [NA]
-- Feature Name: [Fill based on input]
-- TPO/TPM Name: [NA]
+2. Purpose
+Define the purpose of the BRD and what this document aims to achieve. This typically includes aligning business goals with technical execution.
 
-## Overview
-- Brief description of the feature (in not more than 3 sentences): [Fill based on input]
-- **Section # : Narrative**
-  - To be filled by TPO
-  - As a/an (type of user): Retail Mobile Banking CASA
-  - I need to (do some task(s)): [Fill based on input]
-  - so that (I can get some result): [Fill based on input]
+3. Scope of Work
+3.1 In Scope
+List the features, modules, platforms, or use cases included in the scope.
+3.2 Out of Scope
+Clearly state what will not be delivered as part of this project.
 
-## Business Value
-- Expected customer & business benefit: [Fill based on input]
-- Business outcome, user need, and strategic intent (quantifiable/quality), expected volume, TPS (in case new feature altogether): [Fill based on input]
-- Project Category: Small/Medium/Large (L1/L2/L3): [NA]
+4. Current Process (As-Is)
+Describe the current state of the process or system, or state N/A if this is a greenfield (new) initiative.
 
-## Figma/Design Links
-- Include Mobile design VD’s: [NA]
+5. Proposed Process (To-Be)
+Explain how the new system, product, or service will function, focusing on user interaction, core functionality, and value addition.
 
-## Acceptance Criteria (Functional + Non-Functional)
-- All the journey must be explained here: [Fill based on input]
-- If possible, try to make a flowchart/sequence diagram: [NA]
-- | S.No | Scenario | Criteria | GIVEN | WHEN | THEN |
-  |------|----------|----------|-------|------|------|
-  | 1 | Happy Path/Positive flow | Successful flow with expected user inputs, this should include Field level validations basis each screen, Toast messages, error messages, Batch runs (flows explain in tabular format) | User is KYC-compliant | Clicks on CTA | Transaction completes, FE/BE masking |
-  | 2 | Server Failure/Negative flow | Server errors, invalid data, timeouts, Error codes, Slow network, partial response, etc. | User initiates txn | Backend returns 5XX,4xx | Show blackout message with retry later,SSO |
-  | 3 | Consent Denied |  | User does not consent | Clicks Submit | Show rejection message |
-  | 4 | Check for existing impact on any txns/admin txns |  |  |  |  |
-  | 5 | SPOF points |  |  |  |  |
-  | 6 | Migration points |  |  |  |  |
-  | 7 | Regulatory Compliance | RBI/NPCI mandatory validations, time cutoffs |  |  |  |
-  | 8 | Share download | Fields that will be shared/downloaded/mogo etc |  |  |  |
+6. Vision Statement
+Summarize the long-term objective of the project or product and its intended impact.
 
-## Field Validations
-| Feature | Label | Mandatory(Y/N) | Field Type | Datatype | Field Size | Is it Editable | Remarks |
-|---------|-------|----------------|------------|----------|------------|---------------|---------|
-| [Fill based on input] |  |  |  |  |  |  |  |
+7. Target Audience / User Segments
+Identify the user groups (e.g., customers, internal teams, partners) who will use or benefit from the product.
 
-## Checklist
-**Section #: Pre-requisites**
-- To be filled by BSG BA
-- Product processor involved: OBP, FC, Billdesk
-- Currencies applicable: Only INR or Non INR
-- Migration Impact Line 5 to Line 6 or vice versa (Yes or No): No
-- If migration Impact YES: Explain the impact: [NA]
-- If for Mobile OS permissions involved: NA for this story
-- If for Mobile and any download in device: Yes to be sent to HDFC doc folder
-- Language: [NA]
-- VD's provided for Dark and Light: [NA]
-- Financial/Non financial: [NA]
-- Regulatory ask? If yes please provide Guideline or Regulatory body: [NA]
-- Ops process note received or WIP or NA: [NA]
+8. Functional Requirements
+List all key business and user requirements in bullet or numbered form.
+Example:
+User onboarding and authentication
 
-## Business Validations
-- To be filled by BSG BA
-1. Allowed Customer type: [NA]
-2. Allowed CASA Relationship: [NA]
-3. Allowed Account Status: [NA]
-4. Account Memo: [NA]
-5. Mnemonic code: [NA]
-6. Any external URL or Redirection link(e.g PWS): [NA]
-7. Re-KYC/FATCA/KYC: [NA]
 
-## Out of Scope
-- What is intentionally excluded from the release: [NA]
+Dashboard with personalized insights
 
-## Admin Configurations
-| S.No | Configuration | Details |
-|------|---------------|---------|
-| 1 | ROLES | [NA] |
-| 2 | DAM | [NA] |
-| 3 | LIMITS | [NA] |
-| 4 | List of Masters (new or existing)/Table name | [NA] |
-| 5 | APP GEN | [NA] |
-| 6 | ERROR DETAILS | [NA] |
-| 7 | ADOBE AEM | [NA] |
-| 8 | ADOBE TARGET | [NA] |
-| 9 | ADOBE ANALYTICS | [NA] |
-| 10 | REPORTS | [NA] |
-| 11 | BLACKOUT | [NA] |
-| 12 | CS | [NA] |
-| 13 | ALERTS SMS /EMAIL/Notifications | [NA] |
-| 14 | TXN ID List | [NA] |
-| 15 | Caching | [NA] |
-| 16 | Feature flags required | [NA] |
-| 17 | Global search tags | [NA] |
 
-## ISG/Compliance/Risk Checklist
-| Domain | Checklist | Explain the requirements here |
-|--------|----------|-----------------------------|
-| Security | MFA, PRM (RT/NRT), Biocatch, Encryption, masking, any SDK, is SDK scr sign off taken, Kavach, RASP, Lookout, Session parameters | [NA] |
-| Regulatory | RBI, NPCI transaction limits, consent, audit logs | [NA] |
-| Data Privacy | PII masking, DPSC, DPIA checklist | [NA] |
-| Platform Guidelines | App Store + Play Store review checklist, Firebase configuration | [NA] |
-| Other Compliance | Accessibility norms | [NA] |
+Notification and reminder engine
 
-## Cross-Platform Impact
-- Mention if any change in MobileBanking is needed: [NA]
-- Consistency between platforms required? (Yes/No): [NA]
 
-## NFRs (Non-Functional Requirements having functional impact)
-- Other points to be covered by Architecture team
-- Response time SLA (e.g., < 2 sec): [NA]
-- Purging Policy: [NA]
-- Rate Limiting: [NA]
-- Memory/Pagination considerations: [NA]
+Admin panel for content management
 
-## Test Data & Validation
-| Field | Value |
-|-------|-------|
-| Sample Cust ID | 1234567 |
-| Scenario | Prime customer, 3 transactions, OTP failure |
 
-## Documentation
-- New Error Codes or existing one’s: [NA]
-- Related Confluence: [Link]
 
-## API & Integration
-- Common Service: Yes/No: [NA]
-- Event-based or API-based integration: [NA]
-- API available: Yes or NO: [NA]
-- If Yes, API documentation and field mapping done with VD(attach the document), provide OBP JIRA ID: [NA]
-- API specs – of Product processor: [NA]
-- Dependency: Flex cube / Third-party (NPCI, CIBIL, etc.): [NA]
+9. Non-Functional Requirements
+Include performance, scalability, usability, and compliance-related requirements.
+Example:
+System should support 1 million concurrent users
 
-## Analytics & Monitoring
-| Tool | Config |
-|------|--------|
-| Firebase Crashlytics | Crash trace, ANR monitoring |
-| Adobe Analytics | User path, conversion funnel, drop-offs |
 
-Fill in the [Fill based on input] sections and other placeholders based on the provided meeting transcript, concept note, and additional context. Use "NA" for sections where no data is available. Ensure all tables are formatted as shown, with content in black font and headings in blue (RGB: 0, 0, 255).`;
+GDPR and data privacy compliance
+
+
+Response time < 2 seconds
+
+
+
+10. API and Integration Requirements
+Outline any third-party or internal systems the solution will integrate with, and API needs.
+Example:
+REST API for authentication
+
+
+Integration with credit score providers
+
+
+Webhooks for real-time notifications
+
+
+
+11. Operational Concepts & Scenarios
+Describe key user flows or system interactions that are critical to success.
+Example:
+First-time user onboarding
+
+
+Daily engagement through learning modules
+
+
+Gamified goal tracking
+
+
+
+12. User Account Management (UAM)
+Explain how users will create, manage, and recover their accounts, and what controls will be in place (e.g., password policy, 2FA).
+
+13. Target Environment
+Specify supported platforms and devices.
+Example:
+Android (Primary)
+
+
+iOS
+
+
+Web (Mobile-responsive)
+
+
+Cloud-hosted backend (AWS / Azure / GCP)
+
+
+
+14. Assumptions and Constraints
+Assumptions
+Users have basic digital literacy
+
+
+Internet connectivity is available
+
+
+Constraints
+Must be deployed in < 3 months
+
+
+Budget capped at ₹X
+
+
+
+15. Success Metrics
+Define how success will be measured post-launch.
+Example:
+30% user activation in 7 days
+
+
+25% module completion within 30 days
+
+
+Net Promoter Score (NPS) > 60
+
+16. Appendices
+Attach any supporting documents, mockups, or references here.`;
 
       const result = await model.generateContent(prompt);
       const brdText = result.response.text() || 'Failed to generate BRD content.';

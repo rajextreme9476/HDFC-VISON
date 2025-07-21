@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/HDFC-VISON/static/css/main.6a29a60a.css",
-    "main.js": "/HDFC-VISON/static/js/main.9c9718f5.js",
+    "main.js": "/HDFC-VISON/static/js/main.8a80b833.js",
     "static/js/453.025ebd42.chunk.js": "/HDFC-VISON/static/js/453.025ebd42.chunk.js",
     "index.html": "/HDFC-VISON/index.html",
     "main.6a29a60a.css.map": "/HDFC-VISON/static/css/main.6a29a60a.css.map",
-    "main.9c9718f5.js.map": "/HDFC-VISON/static/js/main.9c9718f5.js.map",
+    "main.8a80b833.js.map": "/HDFC-VISON/static/js/main.8a80b833.js.map",
     "453.025ebd42.chunk.js.map": "/HDFC-VISON/static/js/453.025ebd42.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6a29a60a.css",
-    "static/js/main.9c9718f5.js"
+    "static/js/main.8a80b833.js"
   ]
 }
